@@ -6,7 +6,9 @@ class SpeciesController < ApplicationController
       (:latin_name =~ src) | (:description =~ src))
 
     respond_to do |format|
-      format.json { render :json => @species.to_json }
+      format.json { render :json => @species.to_json(
+        :methods => [:photo_thumb, :photo_small, :photo_medium, :photo_huge]
+      )}
     end
   end
 end
