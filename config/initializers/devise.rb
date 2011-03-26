@@ -139,4 +139,7 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
+
+  config.rpx_application_name = 'fish2tank'
+  RPXNow.api_key = 'e89fa0f02fc1f68a0bbc815dbd5080e212be5f87'
 end

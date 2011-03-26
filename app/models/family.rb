@@ -1,0 +1,5 @@
+class Family < ActiveRecord::Base
+  has_many :species
+  
+  validates_presence_of :common_name
+end

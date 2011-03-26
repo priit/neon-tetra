@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/sferik/rails_admin.git
+  revision: 01974b1e5597c07b949034b905ae5c9ceb1cdda8
+  specs:
+    rails_admin (0.0.1)
+      builder (~> 2.1.0)
+      rails (~> 3.0.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -28,6 +36,7 @@ GEM
       activemodel (= 3.0.5)
       activesupport (= 3.0.5)
     activesupport (3.0.5)
+    acts-as-taggable-on (2.0.6)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -81,7 +90,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   devise (= 1.1.7)
   devise_rpx_connectable (= 0.2.2)
   rails (= 3.0.5)
+  rails_admin!
   sqlite3
