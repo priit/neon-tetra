@@ -2,9 +2,11 @@
 // This file is automatically included by javascript_include_tag :defaul
 
 function moreInfo(fish) {
-  name = $(fish + " .name").html();
-  description = $(fish + " .description").html();
-  image = $(fish + " .image").html();
+  name           = $(fish + " .name").html();
+  description    = $(fish + " .description").html();
+  image          = $(fish + " .image").html();
+  min_group_size = $(fish + " .min_group_size").html();
+  $('input[name=fish_counter]').val(min_group_size);
   $('#dialog h1').html(name);
   $('#dialog .info').html(description);
   $('#dialog .image').html(image);
