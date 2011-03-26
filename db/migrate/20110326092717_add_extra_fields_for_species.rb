@@ -1,7 +1,7 @@
 class AddExtraFieldsForSpecies < ActiveRecord::Migration
   def self.up
     add_column :species, :tank_size, :integer, :limit => 1
-    add_column :species, :size, :decimal, :precision => 8, :size => 2
+    add_column :species, :size, :decimal, :precision => 8, :scale => 2
     add_column :species, :size_descriptor, :integer, :limit => 1
     add_column :species, :agressivness, :integer, :limit => 1
     add_column :species, :activity, :integer, :limit => 1
