@@ -43,10 +43,11 @@
             <% @species.each do |s| %>
               <li id="fish_<%= s.id.to_s%>">
                 <%= image_tag(s.photo.url('thumb'), :class => 'vtip', :title => s.common_name, :onClick => 'moreInfo("#fish_'+ s.id.to_s+'")') %>
-                <div style="display:none">8
+                <div style="display:none">
                   <div class="name"><%= s.common_name %></div>
                   <div class="description"><%= simple_format(s.description) %></div>
                   <div class="image"><%= image_tag(s.photo.url('medium', :width => "400px")) %></div>
+                  <div class="min_group_size"><%= s.min_group_size %></div>
                 </div>
               </li>
             <% end %>
