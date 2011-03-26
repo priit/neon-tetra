@@ -45,11 +45,14 @@ body {
 #step2 #search_result {
   list-style-type: none;
   margin: 0px;
-  padding: 0px
+  padding: 0px;
+  width: 880px;
+  float: left;
 }
 
 #step2 #search_result li{
-  margin: 0px;
+  margin: 5px;
+  float: left
 }
 
 #step2 #search_result li img{
