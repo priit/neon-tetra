@@ -17,10 +17,10 @@
       <div class="wizard">
         <div id="step1">
           <div class="video">
-            <iframe src="http://player.vimeo.com/video/14109777" width="640" height="360" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/21526067" width="620" height="349" frameborder="0"></iframe>
           </div>
           <div class="text">
-            Set your tank size in <input type="text" value="liters" onfocus="if($(this).val()=='liters') {$(this).val('');}" onblur=" if($(this).val().length==0) { $(this).val('liters'); }"> and <a href="#" onclick="nextStep('step2')">get started &raquo;</a>
+            Set your tank size in <input name="volume" type="text" value="liters" onfocus="if($(this).val()=='liters') {$(this).val('');}" onblur=" if($(this).val().length==0) { $(this).val('liters'); }"> and <a href="#" onclick="createAquarium()">get started &raquo;</a>
           </div>
         </div>
         
@@ -40,6 +40,7 @@
             <div class="bottom"></div>
           </div>
           <ul id="search_result">
+          
             <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
             <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
             <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
@@ -187,7 +188,7 @@
       </div>
       <div class="right_panel">
         <h1>Clown Fish</h1>
-        <div>
+        <div class="info">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
         <div>
