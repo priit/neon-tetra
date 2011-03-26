@@ -1,7 +1,7 @@
 class Species < ActiveRecord::Base
   belongs_to :family
-  has_many :configurations
-  has_many :aquaria, :through => :configurations
+  has_many :memberships
+  has_many :aquaria, :through => :memberships
   
   acts_as_taggable_on :tags
   
