@@ -3,7 +3,13 @@ body {
 	font-family: Helvetica, Verdana, Arial, san  s-serif;
 	text-align: center;
 	color: #333333;
-	background: url('../images/main_bg.png') repeat-x top #FFFFFF;
+	background: url('../images/main_bg.png') repeat-x top #f6f6f6;
+}
+
+p {
+  font-family: Arial;
+  line-height: 1.2em;
+  font-size: 12px;
 }
 
 #wrapper {
@@ -65,22 +71,66 @@ body {
   text-decoration: none;
 }
 
+#step2 .search {
+  font-size: 26px;
+  width: 726px;
+  margin: 0px 0px 10px 0px;
+  float: left;
+  vertical-align: middle;
+  line-height: 38px;
+}
+
+#step2 .search span,#step2 .search input{
+  float: left;
+  font-size: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+#step2 .search span {
+  margin-right: 20px;
+}
+#step2 .search input{
+  width: 536px;
+  border: 1px solid black;
+}
+
+#step2 #category_list {
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  float: left;
+  width: 240px;
+  height: 360px;
+}
+#step2 #category_list ul{
+  list-style-type: none;
+  padding: 5px;
+  margin: 0px;
+}
+
+#step2 #category_list ul li{
+  height: 27px;
+  line-height: 27px;
+  border-bottom: 1px solid #999999;
+}
+
 #step2 #search_result {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-  width: 686px;
+  width: 475px;
   float: left;
-  margin: 20px;
+  margin: 0px 5px;
 }
 
 #step2 #search_result li{
-  margin: 5px;
+  margin: 3px 3px 0 0;
   float: left
 }
 
 #step2 #search_result li img{
-  cursor: pointer;
+ border: 1px solid red;
+ cursor: pointer;
 }
 
 #footer {
