@@ -8,7 +8,9 @@ class Species < ActiveRecord::Base
   validates_presence_of :common_name
 
   has_attached_file :photo, :styles => {
-    :medium => '300x300',
-    :thumb  => '100x100'
+    :thumb  => '150x113#',
+    :small  => '350x263#',
+    :medium => '410x308#',
+    :huge   => '870x653#'
   }
 end
