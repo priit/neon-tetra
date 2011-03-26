@@ -1,5 +1,8 @@
 <h2>Sign in</h2>
 
+<%= link_to_rpx 'Sign in', user_session_url %>
+<%= javascript_include_rpx(user_session_url) %>
+
 <%= embed_rpx user_session_url %>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
