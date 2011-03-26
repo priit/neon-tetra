@@ -1,0 +1,57 @@
+body {
+	font-size: 14px;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	text-align: center;
+}
+
+#wrapper {
+  text-align: left;
+  margin: auto;
+  margin-top: 100px;
+  width: 920px;
+  position: relative;
+}
+
+#logo {
+  float: left;
+  font-size: 20px;
+  text-align: center;
+}
+
+#step1, #step2 {
+  width: 880px;
+  top: 160px;
+  position: absolute;
+  padding: 20px;
+  background-color: #cacaca;
+  float: left;
+  border: 1px solid black;
+  -moz-border-radius: 10px;
+}
+
+#step1 h1 {
+  text-align: center;
+}
+
+#step1 #tank_properties .progressbar {
+  height: 50px;
+  width: 876px;
+  float: left;
+  border-radius: 20px;
+  border: 2px solid black;
+  background: red;
+}
+
+.button {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;  
+}
+
+.button.next {
+  float: right;
+}
+
+.button.back {
+  float: left;
+}

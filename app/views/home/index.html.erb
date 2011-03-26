@@ -1,1 +1,55 @@
-tere
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Let's tank some fish!</title>
+    
+    <%= stylesheet_link_tag "style", "jquery-ui-1.8.11.custom" %>
+    <%= javascript_include_tag "jquery-1.5.1.min", "jquery-ui-1.8.11.custom.min" %>
+    
+    <script type="text/javascript">
+      function nextStep(from, to) {
+        $('#'+from).hide('slide', { direction: 'left' }, 900);
+        $('#'+to).show('slide', { direction: 'right' }, 1000);
+      }
+      
+      function prevStep(from, to) {
+        $('#'+from).hide('slide', { direction: 'right' }, 900);
+        $('#'+to).show('slide', { direction: 'left' }, 1000);
+      }
+      
+      
+    </script>
+  
+  </head>
+  
+  <body>
+    <div id="wrapper">
+      <div id="logo">
+        <%= image_tag("logo.png") %><br>
+        Fish2Tank.com
+      </div>
+      <div id="step1">
+        <h1>Let's tank some fish</h1>
+        <div id="tank_properties">
+          <div class="progressbar"></div>
+        </div>
+        <h2>Set your tank size: <input type="text" size="3"> L</h2>
+
+        <div class="button next" onclick="nextStep('step1', 'step2')">
+          Select some fishes &raquo;
+        </div>
+      </div>
+      
+      <div id="step2" style="display:none">
+        Hi, I am step2!
+        <div class="button back" onclick="prevStep('step2', 'step1')">
+         &laquo; back
+        </div>
+      </div>
+    </div>
+  </body>
+  
+</html> 
+
+
