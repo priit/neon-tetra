@@ -11,10 +11,11 @@ function moreInfo(dsa) {
 function nextStep(elem) {
   $("#"+elem).prev().hide('slide', { direction: 'left' }, 1000);
   $('#'+elem).show('slide', { direction: 'right' }, 1000);
+  return false;
 }
 
 function prevStep(elem) {
-  console.log(elem);
   $("#"+elem).next().hide('slide', { direction: 'right' }, 1000);
   $('#'+elem).show('slide', { direction: 'left' }, 1000);
+  return false;
 }
