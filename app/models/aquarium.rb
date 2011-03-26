@@ -31,7 +31,7 @@ class Aquarium < ActiveRecord::Base
   end
   
   def families
-    @families ||= species.collect {|s| s.family}.uniq.sort
+    @families ||= species.collect {|s| s.family}.uniq.sort_by {|f| f.common_name}
   end
   
   def max_size_difference
@@ -40,10 +40,22 @@ class Aquarium < ActiveRecord::Base
   end
   
   def ph_range
-    (species.collect {|s| s.min_ph}.max .. species.collect {|s| s.max_ph}.min)
+    (species.collect {|s| s.min_ph}.compact.max .. species.collect {|s| s.max_ph}.compact.min)
   end
   
-  def dt_range
-    (species.collect {|s| s.min_dt}.max .. species.collect {|s| s.max_dt}.min)
+  def dh_range
+    (species.collect {|s| s.min_dh}.compact.max .. species.collect {|s| s.max_dh}.compact.min)
+  end
+  
+  def temperature_range
+    (species.collect {|s| s.min_temperature}.compact.max .. species.collect {|s| s.max_temperature}.compact.min)
+  end
+  
+  def specimen_count
+    memberships.collect {|m| m.amount}.sum
+  end
+  
+  def volume_needed
+    memberships.collect {|m| m.volume}.sum
   end
 end

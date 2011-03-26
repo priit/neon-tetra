@@ -13,4 +13,9 @@ class Species < ActiveRecord::Base
     :medium => '410x308#',
     :huge   => '870x653#'
   }
+  
+  def volume
+    #e.g 3 cm => 30l
+    size.floor * 10
+  end
 end

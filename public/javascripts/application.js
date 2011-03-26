@@ -2,6 +2,8 @@
 // This file is automatically included by javascript_include_tag :defaul
 
 function moreInfo(dsa) {
+  $('h1').html('I am Fish');
+  $('.dialog .info').html('TERE kala!!');
   $("#dialog").dialog({
 			height: 380,
 			width: 890
@@ -21,8 +23,12 @@ function prevStep(elem) {
 }
 
 function createAquarium() {
-  $.post('/aquariums', { },
-    function(data) {
+//TODO: empty and letters field check
+  
+  $.post('/aquariums', {
+    aquarium: { 'volume' : $('input[name=volume]').val() }
+  }, function(data) {
+    
     }
   );
   nextStep('step2');
