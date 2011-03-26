@@ -1,53 +1,76 @@
 body {
 	font-size: 14px;
-	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-family: Helvetica, Verdana, Arial, san  s-serif;
 	text-align: center;
+	color: #333333;
+	background: url('../images/main_bg.png') repeat-x top #FFFFFF;
 }
 
 #wrapper {
   text-align: left;
   margin: auto;
-  margin-top: 100px;
-  width: 920px;
-  position: relative;
+  margin-top: 24px;
+  width: 766px;
 }
 
 #logo {
+  width: 766px;
   float: left;
   font-size: 20px;
   text-align: center;
 }
 
-#step1, #step2, #step3 {
-  width: 880px;
-  top: 160px;
-  position: absolute;
-  padding: 20px;
-  background-color: #cacaca;
+.wizard {
+  position: relative;
+  width: 726px;
   float: left;
-  border: 1px solid black;
-  -moz-border-radius: 10px;
-  margin-bottom: 20px;
+  height: 480px;
 }
 
+#step1, #step2, #step3 {
+  width: 726px;
+  top: 10px;
+  position: absolute;
+}
+
+#step1 .video {
+  text-align: center;
+}
 #step1 h1 {
   text-align: center;
 }
 
-#step1 #tank_properties .progressbar {
-  height: 50px;
-  width: 876px;
-  float: left;
-  border-radius: 20px;
-  border: 2px solid black;
-  background: red;
+#step1 .text {
+  font-size: 33px;
+  line-height: 33px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#step1 .text input{
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-weight: bold;
+  width: 110px;
+  height: 33px;
+  font-size: 33px;
+  border: 1px solid #656c80;
+  background-color: #e9f1f4;
+  color: #666666;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#step1 .text a{
+  color: #f05103;
+  text-decoration: none;
 }
 
 #step2 #search_result {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-  width: 840px;
+  width: 686px;
   float: left;
   margin: 20px;
 }
@@ -61,6 +84,16 @@ body {
   cursor: pointer;
 }
 
+#footer {
+  text-align: center;
+  border-top: 2px solid #548196;
+  color: #548196;
+  font-weight: bold;
+  float: left;
+  width: 706px;
+  padding: 10px;
+}
+
 /* dialog */
 
 .dialog .left_panel {
@@ -70,10 +103,7 @@ body {
 /* helpers */
 
 .button {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;  
-  cursor: pointer;
+  color: #f05103;
 }
 
 .button.next {
