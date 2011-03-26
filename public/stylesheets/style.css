@@ -134,7 +134,7 @@ p {
 }
 
 #step2 #search_result li img{
- border: 1px solid red;
+ border: 1px solid #999999;
  cursor: pointer;
 }
 
@@ -176,10 +176,114 @@ p {
   padding: 10px;
 }
 
+
 /* dialog */
 
-.dialog .left_panel {
+.ui-dialog {
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgb(0, 0, 0);
+  /* RGBa with 0.6 opacity */
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFF;
+  border: none;
+}
+
+.ui-dialog-titlebar {
+  background: none;
+  border: none;
+  height: 0px;
+  padding: 0px !important;
   float: left;
+  margin: 0px;
+  position: static !important;
+}
+
+.ui-dialog-titlebar-close {
+  top: 15px !important;
+  right: 5px !important;
+}
+.ui-widget-header .ui-icon {
+  background: url(../images/close.png) top right;
+  background-position: 0 0;
+  height: 24px;
+  width: 24px;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus  {
+  background: none;
+  border: none;
+}
+
+.ui-state-hover .ui-icon {
+  background: url(../images/close_h.png) top right !important;
+  background-position: 0 0;
+  height: 24px;
+  width: 24px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  height: 24px;
+  width: 24px;
+}
+
+#dialog {
+  color: #fff;
+  padding: 5px;
+  text-align: left;
+  font-size: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+#dialog h1{
+  margin: 0px;
+}
+
+#dialog .left_panel .image{
+  overflow: hidden;
+  width: 400px;
+  border: 1px solid #474847;
+  border-radius: 1px;
+}
+
+#dialog .left_panel .image img {
+  float: left;
+}
+#dialog .left_panel {
+  float: left;
+}
+
+#dialog .right_panel {
+  float: right;
+  width: 280px;
+  padding: 0px 10px;
+}
+
+#dialog .add_fish_btn {
+  background: red;
+  height: 28px;
+  float: left;
+  line-height: 28px;
+  padding: 0px 10px;
+  font-size: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#dialog input[name=fish_counter] {
+  height: 28px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background-color: #707070;
+  width: 62px;
+  font-size: 12px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+}
+#dialog .options {
+  margin-top: 10px;
 }
 
 /* helpers */
