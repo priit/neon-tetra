@@ -19,3 +19,11 @@ function prevStep(elem) {
   $('#'+elem).show('slide', { direction: 'left' }, 1000);
   return false;
 }
+
+function createAquarium() {
+  $.post('/aquariums', { },
+    function(data) {
+    }
+  );
+  nextStep('step2');
+}
