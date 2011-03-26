@@ -42,7 +42,7 @@ function createAquarium() {
 }
 
 function doSearch(string) {
-  $.get('/families', {
+  $.get('/species', {
     search: string
   }, function(data) {
   });

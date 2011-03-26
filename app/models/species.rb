@@ -18,4 +18,23 @@ class Species < ActiveRecord::Base
     #e.g 3 cm => 30l
     size.floor * 10
   end
+
+  def photo_thumb
+    photo.url(:thumb) if photo?
+  end
+
+  def photo_small
+    photo.url(:small) if photo?
+  end
+
+  def photo_medium
+    photo.url(:medium) if photo?
+  end
+
+  def photo_huge
+    photo.url(:huge) if photo?
+  end
+
+
+
 end
