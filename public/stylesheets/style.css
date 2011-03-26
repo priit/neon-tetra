@@ -27,6 +27,7 @@ body {
   float: left;
   border: 1px solid black;
   -moz-border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 #step1 h1 {
@@ -46,8 +47,9 @@ body {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-  width: 880px;
+  width: 840px;
   float: left;
+  margin: 20px;
 }
 
 #step2 #search_result li{
@@ -57,6 +59,12 @@ body {
 
 #step2 #search_result li img{
   cursor: pointer;
+}
+
+/* dialog */
+
+.dialog .left_panel {
+  float: left;
 }
 
 /* helpers */

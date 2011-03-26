@@ -2,7 +2,10 @@
 // This file is automatically included by javascript_include_tag :defaul
 
 function moreInfo(dsa) {
-  
+  $("#dialog").dialog({
+			height: 380,
+			width: 890
+  });
 }
 
 function nextStep(elem) {
