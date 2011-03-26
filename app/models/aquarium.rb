@@ -43,7 +43,13 @@ class Aquarium < ActiveRecord::Base
     (species.collect {|s| s.min_ph}.max .. species.collect {|s| s.max_ph}.min)
   end
   
-  def dt_range
-    (species.collect {|s| s.min_dt}.max .. species.collect {|s| s.max_dt}.min)
+  def dh_range
+    (species.collect {|s| s.min_dh}.max .. species.collect {|s| s.max_dh}.min)
   end
+  
+  def temperature_range
+    (species.collect {|s| s.min_temperature}.max .. species.collect {|s| s.max_temperature}.min)
+  end
+  
+  
 end
