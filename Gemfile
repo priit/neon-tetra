@@ -7,7 +7,13 @@ gem 'devise_rpx_connectable', '0.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do
+  gem 'mysql2'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 

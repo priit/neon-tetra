@@ -18,7 +18,7 @@ body {
   text-align: center;
 }
 
-#step1, #step2 {
+#step1, #step2, #step3 {
   width: 880px;
   top: 160px;
   position: absolute;
@@ -42,10 +42,30 @@ body {
   background: red;
 }
 
+#step2 #search_result {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 880px;
+  float: left;
+}
+
+#step2 #search_result li{
+  margin: 5px;
+  float: left
+}
+
+#step2 #search_result li img{
+  cursor: pointer;
+}
+
+/* helpers */
+
 .button {
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;  
+  cursor: pointer;
 }
 
 .button.next {
@@ -55,3 +75,4 @@ body {
 .button.back {
   float: left;
 }
+
