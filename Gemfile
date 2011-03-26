@@ -12,6 +12,7 @@ gem 'sqlite3'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 gem 'acts-as-taggable-on'
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'

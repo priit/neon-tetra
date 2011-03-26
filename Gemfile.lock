@@ -56,6 +56,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -93,6 +96,7 @@ DEPENDENCIES
   acts-as-taggable-on
   devise (= 1.1.7)
   devise_rpx_connectable (= 0.2.2)
+  paperclip
   rails (= 3.0.5)
   rails_admin!
   sqlite3

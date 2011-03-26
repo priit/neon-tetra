@@ -4,4 +4,9 @@ class Species < ActiveRecord::Base
   acts_as_taggable
   
   validates_presence_of :common_name
+
+  has_attached_file :photo, :styles => {
+    :medium => '300x300',
+    :thumb  => '100x100'
+  }
 end
