@@ -45,19 +45,18 @@ body {
   line-height: 33px;
   text-align: center;
   font-weight: bold;
-  margin: 10px;
+  margin: 35px 10px;
 }
 
 #step1 .text input{
 	font-family: Helvetica, Verdana, Arial, sans-serif;
   font-weight: bold;
   width: 110px;
-  height: 33px;
-  font-size: 33px;
+  height: 30px;
+  font-size: 30px;
   border: 1px solid #656c80;
   background-color: #e9f1f4;
   color: #666666;
-  vertical-align: middle;
   text-align: center;
 }
 
