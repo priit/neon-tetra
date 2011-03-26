@@ -1,12 +1,17 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaul
 
-function moreInfo(dsa) {
-  $('h1').html('I am Fish');
-  $('.dialog .info').html('TERE kala!!');
+function moreInfo(fish) {
+  name = $(fish + " .name").html();
+  description = $(fish + " .description").html();
+  image = $(fish + " .image").html();
+  $('#dialog h1').html(name);
+  $('#dialog .info').html(description);
+  $('#dialog .image').html(image);
+  
   $("#dialog").dialog({
-			height: 380,
-			width: 890
+			height: 415,
+			width: 726
   });
 }
 
