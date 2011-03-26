@@ -9,12 +9,12 @@ RailsAdmin.config do |config|
 
     field :family_id
     field :tank_size
-    field :size
+    field :size do
+      label 'Size (cm)'
+    end
     field :size_descriptor
     field :agressivness
     field :activity
-    #field :shield
-    #field :endurance
     field :plant_eater
     field :min_group_size
     field :min_temperature
