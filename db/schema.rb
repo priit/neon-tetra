@@ -10,7 +10,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110326081415) do
+ActiveRecord::Schema.define(:version => 20110326082237) do
+
+  create_table "families", :force => true do |t|
+    t.string   "common_name",   :null => false
+    t.string   "latin_name"
+    t.integer  "species_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.string   "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_histories_on_item_and_table_and_month_and_year"
+
+  create_table "species", :force => true do |t|
+    t.string  "common_name", :null => false
+    t.string  "latin_name"
+    t.integer "family_id",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
