@@ -5,7 +5,7 @@ class Species < ActiveRecord::Base
   
   acts_as_taggable_on :tags
   
-  validates_presence_of :common_name
+  validates_presence_of :common_name, :family_id
 
   has_attached_file :photo, :styles => {
     :thumb  => '150x113#',
