@@ -33,3 +33,18 @@ function createAquarium() {
   );
   nextStep('step2');
 }
+
+function doSearch(string) {
+  $.get('/families', {
+    search: string
+  }, function(data) {
+  });
+}
+
+$(document).ready(function() {
+  $('#search').keyup(function(e) {
+    if (e.keyCode == 13) {
+      doSearch($(e.target).val());
+    }
+  });
+});
