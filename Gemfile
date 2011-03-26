@@ -7,9 +7,7 @@ gem 'devise_rpx_connectable', '0.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production do
-  gem 'mysql2'
-end
+gem 'mysql2'
 
 group :development, :test do
   gem 'mysql2'

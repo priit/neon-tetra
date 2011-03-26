@@ -33,25 +33,16 @@
           <div id="category_list">
             <div class="top"></div>
               <ul>
-                <li>Tetras</li>
-                <li>Barbs</li>
-                <li>Eels</li>
+                <% @families.each do |f| -%>
+                  <li><%= f.common_name -%></li>
+                <% end %>
               </ul>
             <div class="bottom"></div>
           </div>
           <ul id="search_result">
-          
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            
-        
+            <% @species.each do |s| %>
+              <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <% end %>
           </ul>
           <div class="button back" onclick="prevStep('step1')">
            &laquo; back
