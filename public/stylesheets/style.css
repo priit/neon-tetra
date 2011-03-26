@@ -3,7 +3,19 @@ body {
 	font-family: Helvetica, Verdana, Arial, san  s-serif;
 	text-align: center;
 	color: #333333;
-	background: url('../images/main_bg.png') repeat-x top #FFFFFF;
+	background: url('../images/main_bg.png') repeat-x top #f6f6f6;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+p {
+  font-family: Arial;
+  line-height: 1.2em;
+  font-size: 12px;
 }
 
 #wrapper {
@@ -45,7 +57,8 @@ body {
   line-height: 33px;
   text-align: center;
   font-weight: bold;
-  margin: 35px 10px;
+  margin: 35px 0px;
+  text-shadow: 1px 1px 0 #AFACAD;
 }
 
 #step1 .text input{
@@ -65,22 +78,92 @@ body {
   text-decoration: none;
 }
 
-#step2 #search_result {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  width: 686px;
+#step2 .search {
+  font-size: 26px;
+  width: 726px;
+  margin: 0px 0px 10px 0px;
   float: left;
-  margin: 20px;
+  vertical-align: middle;
+  line-height: 38px;
+  font-weight: bold;
+}
+
+#step2 .search span,#step2 .search input{
+  float: left;
+  font-size: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+#step2 .search span {
+  margin-right: 20px;
+  text-shadow: 1px 1px 0 #AFACAD;
+}
+#step2 .search input{
+  width: 522px;
+  border: 1px solid black;
+}
+
+#step2 #category_list {
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  float: left;
+  width: 240px;
+  height: 360px;
+}
+#step2 #category_list ul{
+  padding: 5px;
+}
+
+#step2 #category_list ul li{
+  height: 27px;
+  line-height: 27px;
+  border-bottom: 1px solid #999999;
+  font-weight: bold;
+}
+
+#step2 #search_result {
+  width: 475px;
+  float: left;
+  margin: 0px 5px;
 }
 
 #step2 #search_result li{
-  margin: 5px;
+  margin: 3px 3px 0 0;
   float: left
 }
 
 #step2 #search_result li img{
-  cursor: pointer;
+ border: 1px solid red;
+ cursor: pointer;
+}
+
+#step3 #selected_fishes {
+  float: left;
+  width: 510px;
+  overflow-y: auto;
+  height: 370px;
+}
+
+
+#step3 #selected_fishes .selected_fish {
+  border: 1px solid black;
+  float: left;
+  margin: 3px;
+  text-align: center;
+  width: 157px;
+}
+
+#step3 #selected_fishes .selected_fish h2{
+  margin: 0px;
+}
+
+#step3 #tank_properties {
+  border: 1px solid red;
+  float: left;
+  height: 370px;
+  margin-left: 5px;
+  width: 209px;
 }
 
 #footer {

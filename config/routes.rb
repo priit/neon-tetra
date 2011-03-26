@@ -1,5 +1,8 @@
 Fish::Application.routes.draw do
   devise_for :users
+  resources :aquariums
+  resources :configurations
+  resources :species
 
   root :to => 'home#index'
 

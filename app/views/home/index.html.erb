@@ -20,76 +20,141 @@
             <iframe src="http://player.vimeo.com/video/14109777" width="640" height="360" frameborder="0"></iframe>
           </div>
           <div class="text">
-            Set your tank size in <input type="text" value="liters" onfocus="if($(this).val()=='liters') {$(this).val('');}" onblur=" if($(this).val().length==0) { $(this).val('liters'); }"> and <a href="#" onclick="nextStep('step2')">get started!</a>
+            Set your tank size in <input type="text" value="liters" onfocus="if($(this).val()=='liters') {$(this).val('');}" onblur=" if($(this).val().length==0) { $(this).val('liters'); }"> and <a href="#" onclick="nextStep('step2')">get started &raquo;</a>
           </div>
         </div>
         
         <div id="step2" style="display:none">
-          <h1>Search..</h1>
-          <input type="text" name="search" value="Enter keywords...">
-          <p>
-            How to seach a fish? 
-          </p>
+          <div class="search">
+            <span>Search for fish</span>
+            <input type="text" name="search" value="Enter keywords...">
+          </div>
+          
+          <div id="category_list">
+            <div class="top"></div>
+              <ul>
+                <li>Tetras</li>
+                <li>Barbs</li>
+                <li>Eels</li>
+              </ul>
+            <div class="bottom"></div>
+          </div>
           <ul id="search_result">
-            <li>
-              <%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
-            </li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li> 
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
-            <li><%= image_tag('nemo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            <li><%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %></li>
+            
         
           </ul>
           <div class="button back" onclick="prevStep('step1')">
            &laquo; back
           </div>
           <div class="button next" onclick="nextStep('step3')">
-            Select some fishes &raquo;
+            I'm done show me my tank! &raquo;
           </div>
           
         </div>
         
         <div id="step3" style="display:none">
           <h1>Great job tanking your fish!</h1>
+          <ul id="selected_fishes">
+          
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+            
+            <li class="selected_fish">
+              <div class="picture">
+                <%= image_tag('demo_thumb.jpg', :class => 'vtip', :title => "Clown fish", :onClick => 'moreInfo(1)') %>
+              </div>
+              <h2>Clown Fish</h2>
+              <ul class="fish_stats">
+                <li>Stat:1</li>
+                <li>Stat:2</li>
+              </ul>
+            </li>
+          </ul>
           <div id="tank_properties">
-            <div class="progressbar"></div>
+            <div class="progressbar">30%</div>
           </div>
           <div class="button back" onclick="prevStep('step2')">
            &laquo; Back to Adding
