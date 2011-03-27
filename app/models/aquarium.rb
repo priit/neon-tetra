@@ -78,15 +78,18 @@ class Aquarium < ActiveRecord::Base
   
   def used_volume_as_percent
     used = (volume_needed.to_f / effective_volume.to_f * 100).round
-    case used
-    when 0...30 then
-      add_summary(:volume, 'good')
-    when 30...65 then
-      add_summary(:volume, 'pretty good')
-    when 65...85
-      add_summary(:volume, 'growded')
+    #case used
+    #when 0...30 then
+    #  add_summary(:volume, 'good')
+    #when 30...65 then
+    #  add_summary(:volume, 'pretty good')
+    #when 65...85
+    #  add_summary(:volume, 'growded')
+    #else
+    if used > 79
+      add_summary(:volume, 'ok')
     else
-      add_summary(:volume, 'oh my god')
+      add_summary(:volume, 'nok')
       add_environment_error(:volume, "There is no room in your tank")
     end
     used
@@ -178,7 +181,12 @@ class Aquarium < ActiveRecord::Base
         end
       end
       groups[index].each do |sp|
-        result[sp] = {'agressors' => agressors, 'victims' => victims}
+        unless victims.empty?
+          t = []
+          t << " will eat #{victims.to_sentence}" unless victims.empty?
+          #t << " may be eaten by #{agressors.to_sentence}" unless agressors.empty?
+          result[sp] = "<strong>#{sp}</strong>#{t.join(' and ')}"
+        end
       end
     end
     
@@ -186,8 +194,12 @@ class Aquarium < ActiveRecord::Base
     species.all(:select => [:agressivness, :common_name]).group_by {|s| s.size_descriptor}.each do |k, v|
       groups[k] = v.collect{|s| s.common_name}
     end
-    add_environment_error(:compatbility, result)
-    add_summary(:compatibility, 'fail!')
+    if result.empty?
+      add_summary(:compatibility, 'ok')
+    else
+      add_environment_error(:compatbility, result) unless result.empty?
+      add_summary(:compatibility, 'nok')
+    end
   end
   
   def add_summary(key, value)
