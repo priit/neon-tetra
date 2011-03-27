@@ -21,7 +21,7 @@ class AquariumsController < ApplicationController
   def status
     @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     respond_to do |format|
-      format.json { render :json => @aquarium.status }
+      format.json { render :json => @aquarium ? @aquarium.status : {'error' => 'true'} }
     end
   end
 
@@ -29,10 +29,13 @@ class AquariumsController < ApplicationController
   def add
     @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
-      @aquarium.add(params[:id], params[:count])
-      respond_to do |format|
-        format.json { render :json => @aquarium.status }
-      end
+      @aquarium.add(params[:id], params[:count].to_i)
+      text = @aquarium.status
+    else
+      text = {'error' => 'true'}
+    end
+    respond_to do |format|
+      format.json { render :text => text.to_json }
     end
   end
   
@@ -40,9 +43,12 @@ class AquariumsController < ApplicationController
     @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
       @aquarium.remove(params[:id], params[:count])
-      respond_to do |format|
-        format.json { render :json => @aquarium.status }
-      end
+      text = @aquarium.status
+    else
+      text = {'error' => 'true'}
+    end
+    respond_to do |format|
+      format.json { render :text => text.to_json }
     end
   end
 end

@@ -16,83 +16,15 @@
       </div>
       <div class="wizard">
         <div id="step1">
-          <div class="video">
-            <iframe src="http://player.vimeo.com/video/21526067" width="620" height="349" frameborder="0"></iframe>
-          </div>
-          <div class="text">
-            <div>Set your tank size in </div><input name="volume" type="text" value="liters" onfocus="if($(this).val()=='liters') {$(this).val('');}" onblur=" if($(this).val().length==0) { $(this).val('liters'); }"> <div>and</div><a href="#" class="orangeButton" onclick="createAquarium()">GET STARTED &raquo;</a>
-          </div>
+          <%= render :partial => 'step1' %>
         </div>
         
         <div id="step2" style="display:none">
-          <div class="search">
-            <span>Search for fish</span>
-            <input id="search" name="search" type="text" value="Enter keywords..." onfocus="if($(this).val()=='Enter keywords...') {$(this).val('');}" onblur=" if($(this).val().length=='') { $(this).val('Enter keywords...'); }"> 
-          </div>
-          
-          <div id="category_list">
-            <div class="top"></div>
-              <ul>
-                <% @families.each do |f| -%>
-                  <li><%= link_to f.common_name, '#', :onclick => "doFamilySearch(" + f.id.to_s + ");" -%></li>
-                <% end %>
-              </ul>
-            <div class="bottom"></div>
-          </div>
-          <ul id="search_result">
-            <% @species.each do |s| %>
-              <li id="fish_<%= s.id.to_s%>">
-                <%= image_tag(s.photo.url('thumb'), :class => 'vtip', :title => s.common_name, :width => '150px', :height => '113px', :onClick => 'moreInfo("#fish_'+ s.id.to_s+'")') %>
-                <div style="display:none">
-                  <div class="name"><%= s.common_name %></div>
-                  <div class="description"><%= simple_format(s.description) %></div>
-                  <div class="image"><%= image_tag(s.photo.url('medium', :width => "400px")) %></div>
-                  <div class="min_group_size"><%= s.min_group_size %></div>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-          <div class="button back" onclick="prevStep('step1')">
-           &laquo; Back
-          </div>
-          <div class="button next" onclick="nextStep('step3')">
-            I'm done show me my tank! &raquo;
-          </div>
-          
+          <%= render :partial => 'step2' %>
         </div>
         
         <div id="step3" style="display:none">
-          <h1>Great job tanking your fish!</h1>
-          <ul id="selected_fishes">
-            <% @species.each do |s| %>
-              <li id="fish_<%= s.id.to_s%>">
-                <%= image_tag(s.photo.url('thumb'), :class => 'vtip', :title => s.common_name,  :width => '150px', :height => '113px', :onClick => 'moreInfo("#fish_'+ s.id.to_s+'")') %>
-                <div style="display:none">
-                  <div class="name"><%= s.common_name %></div>
-                  <div class="description"><%= simple_format(s.description) %></div>
-                  <div class="image"><%= image_tag(s.photo.url('medium', :width => "400px")) %></div>
-                  <div class="min_group_size"><%= s.min_group_size %></div>
-                </div>
-              </li>
-            <% end %>
-          
-          </ul>
-          <div id="tank_properties">
-            <h1>My fishtank</h1>
-            <ul>
-              <li>Volume: <strong>90L</strong></li>
-              <li>Bioload:</li>
-              <li>Temp: <strong>18-23C</strong></li>
-              <li>pH: 5-7 | dH 3-17</li>
-            </ul>
-            <div class="text">
-              Your selected fish are compatible for your tank.<br><br>
-              Your selected fish are not compatible.
-            </div>
-          </div>
-          <div class="button back" onclick="prevStep('step2')">
-           &laquo; Back
-          </div>
+          <%= render :partial => 'step3' %>
         </div>
       </div>
       
@@ -115,11 +47,12 @@
     <!-- /wrapper -->
 
       <div id="dialog" style="display:none">
+        <div style="display:none" id=""></div>
         <div class="left_panel">
           <div class="image"><%= image_tag('nemo.jpg') %></div>
           <div class="options">
+            <div class="add_fish_btn" onclick="addFish()">Add to tank</div>
             <input type="text" name="fish_counter" value="2">
-            <div class="add_fish_btn">Add to tank</div>
           </div>
         </div>
         <div class="right_panel">

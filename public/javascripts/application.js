@@ -54,7 +54,7 @@ function doSearch(string) {
 
 function populateFishList(data) {
   $.each(data, function(key, val) {
-    $('#search_result').append('<li id="fish_'+val.species.id+'"><img title="dsa" src="'+val.species.photo_thumb+'" onclick="moreInfo(\'#fish_'+val.species.id+'\')" class="vtip" alt="'+val.species.common_name+'"><div style="display:none"><div class="name">'+val.species.common_name+'</div><div class="description">'+val.species.description+'</div><div class="image"><img src="'+val.species.photo_medium+'" alt="'+val.species.common_name+'"></div><div class="min_group_size">'+val.species.min_group_size+'</div></div></li>');
+    $('#search_result').append('<li id="fish_'+val.species.id+'"><img height="113px" width="150px" title="dsa" src="'+val.species.photo_thumb+'" onclick="moreInfo(\'#fish_'+val.species.id+'\')" class="vtip" alt="'+val.species.common_name+'"><div style="display:none"><div class="name">'+val.species.common_name+'</div><div class="description">'+val.species.description+'</div><div class="image"><img src="'+val.species.photo_medium+'" alt="'+val.species.common_name+'"></div><div class="min_group_size">'+val.species.min_group_size+'</div></div></li>');
   });
 }
 
@@ -64,6 +64,15 @@ function doFamilySearch(id) {
     'family_id' : id
   }, function(data) {
     populateFishList(data);
+  });
+}
+
+function addFish() {
+  $.getJSON('/aquariums/add', {
+    id: 1,
+    count: $('input[name=fish_counter]').val()
+  }, function(data) { 
+    
   });
 }
 
