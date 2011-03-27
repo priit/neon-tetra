@@ -112,8 +112,10 @@ h1 {
   text-shadow: 1px 1px 0 #AFACAD;
 }
 #step2 .search input{
-  width: 522px;
+  width: 512px;
   border: 1px solid black;
+  font-size: 20px; padding: 3px 0px 3px 10px;
+  border-radius: 2px;
 }
 
 #step2 #category_list {
@@ -191,18 +193,27 @@ h1 {
     height: 10px;
     width: 191px;
     position: relative;
+    overflow: hidden;
 }
 
 #step3 #tank_properties li.bioload .progress_bar .used{
   background: none repeat scroll 0 0 red;
   height: 10px;
   position: absolute;
-  width: 50%;
 }
 
 #step3 #tank_properties li.bioload .size_info {
   color: #7D7D7D;
   font-size: 10px;
+}
+
+#step3 #tank_properties li.bioload .used_precedences {
+  color: #6a9a10;
+  font-weight: bold;
+}
+
+#step3 #tank_properties li.bioload .used_precedences.red {
+  color: #f81100;
 }
 
 #step3 #tank_properties .text {
@@ -218,6 +229,11 @@ h1 {
   float: left;
   width: 706px;
   padding: 10px;
+  line-height: 33px;
+}
+
+#footer #account{
+  float: left;
 }
 
 .navigation {
@@ -287,7 +303,7 @@ ui-dialog-titlebar-close ui-corner-all {
 
 #dialog {
   color: #fff;
-  padding: 5px;
+  padding: 10px;
   text-align: left;
   font-size: 10px;
   float: left;
@@ -336,6 +352,13 @@ ui-dialog-titlebar-close ui-corner-all {
 }
 #dialog .options {
   margin-top: 10px;
+}
+
+#dialog .options .message {
+  float: left;
+  line-height: 33px;
+  margin: 0 10px;
+  font-size: 16px;
 }
 
 /* helpers */

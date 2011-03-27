@@ -14,7 +14,7 @@ function moreInfo(fish) {
   $('#dialog .image').html(image);
   
   $("#dialog").dialog({
-			height: 365,
+			height: 375,
 			width: 726
   });
 }
@@ -31,7 +31,6 @@ function prevStep(elem) {
 
 function createAquarium() {
 //TODO: empty and letters field check
-  
   $.post('/aquariums', {
     aquarium: { 'volume' : $('input[name=volume]').val() }
   }, function(data) {
@@ -73,7 +72,11 @@ function addFish() {
   }, function(data) { 
     $('#tank_properties .temperature .value').html(data.ranges.temperature);
     $('#tank_properties .pH_dH .value').html('pH: '+data.ranges.ph+' | dH '+data.ranges.dh);
+    $('#tank_properties .progress_bar .used').css('width', data.volume.used + '%');
+    $('#tank_properties .bioload .used_precedences').html(data.volume.used + '%');
     $('#fish_'+fish_id).clone().appendTo('#selected_fishes');
+    $('#dialog .message').html('Fish added').show();
+    setTimeout(function() {$('#dialog .message').fadeOut('slow');}, 1000);
     console.log(data);
     
   });
