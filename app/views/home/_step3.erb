@@ -19,7 +19,13 @@
             <h1>My fishtank</h1>
             <ul>
               <li class="volume">Volume: <span class="value">90L</span></li>
-              <li>Bioload: ~~~>  </li>
+              <li class="bioload">
+                <div>Bioload: 50%</div>
+                <div class="progress_bar">
+                  <div class="used"></div>
+                </div>
+                <div class="size_info">You still have plenty of space in your tank</div>
+              </li>
               <li class="temperature">Temp: <span class="value"></span></li>
               <li class="pH_dH"><span class="value"></span></li>
             </ul>
@@ -28,6 +34,6 @@
               Your selected fish are not compatible.
             </div>
           </div>
-          <div class="button back" onclick="prevStep('step2')">
-           &laquo; Back
+          <div class="navigation">
+            <div class="button back" onclick="prevStep('step2')">&laquo; Back</div>
           </div>

@@ -47,7 +47,7 @@ h1 {
   width: 726px;
   top: 10px;
   position: absolute;
-  height: 410px;
+  height: 470px;
 }
 
 #step1 .video {
@@ -185,6 +185,26 @@ h1 {
   font-weight: bold;
 }
 
+#step3 #tank_properties li.bioload .progress_bar {
+    background: none repeat scroll 0 0 #ececec;
+    float: left;
+    height: 10px;
+    width: 191px;
+    position: relative;
+}
+
+#step3 #tank_properties li.bioload .progress_bar .used{
+  background: none repeat scroll 0 0 red;
+  height: 10px;
+  position: absolute;
+  width: 50%;
+}
+
+#step3 #tank_properties li.bioload .size_info {
+  color: #7D7D7D;
+  font-size: 10px;
+}
+
 #step3 #tank_properties .text {
   font-size: 11px;
   margin: 10px;
@@ -200,6 +220,13 @@ h1 {
   padding: 10px;
 }
 
+.navigation {
+  bottom: 64px;
+  float: left;
+  height: 70px;
+  position: absolute;
+  width: 726px;
+}
 
 /* dialog */
 

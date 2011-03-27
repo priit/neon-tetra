@@ -73,8 +73,8 @@ function addFish() {
   }, function(data) { 
     $('#tank_properties .temperature .value').html(data.ranges.temperature);
     $('#tank_properties .pH_dH .value').html('pH: '+data.ranges.ph+' | dH '+data.ranges.dh);
-    
     $('#fish_'+fish_id).clone().appendTo('#selected_fishes');
+    console.log(data);
     
   });
 }
