@@ -75,8 +75,8 @@ function addFish() {
     $('#tank_properties .progress_bar .used').css('width', data.volume.used + '%');
     $('#tank_properties .bioload .used_precedences').html(data.volume.used + '%');
     $('#fish_'+fish_id).clone().appendTo('#selected_fishes');
-    $('#dialog .message').html('Fish added').show();
-    setTimeout(function() {$('#dialog .message').fadeOut('slow');}, 1000);
+    $('#dialog .message').html(data.message).show();
+    setTimeout(function() {$('#dialog .message').fadeOut('slow');}, 2000);
     console.log(data);
     
   });
