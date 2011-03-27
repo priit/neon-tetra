@@ -319,28 +319,20 @@ ui-dialog-titlebar-close ui-corner-all {
 }
 
 #dialog .add_fish_btn {
-  background: red;
-  height: 28px;
-  float: left;
-  line-height: 28px;
-  padding: 0px 10px;
-  font-size: 12px;
   margin-left: 10px;
+  float: left;
   cursor: pointer;
 }
 
 #dialog input[name=fish_counter] {
-  height: 28px;
-  padding: 0px;
+  background: none repeat scroll 0 0 #FFFFFF;
+  color: #000000;
   float: left;
-  margin: 0px;
-  border: none;
-  background-color: #707070;
-  width: 62px;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bolder;
+  height: 19px;
   text-align: center;
-  color: #FFF;
-  font-weight: bold;
+  width: 13px;
 }
 #dialog .options {
   margin-top: 10px;
@@ -412,7 +404,7 @@ ui-dialog-titlebar-close ui-corner-all {
 .button.next {
   position: absolute;
   right: 0px;
-    bottom: -50px;
+  bottom: -50px;
 }
 
 .button.back {
