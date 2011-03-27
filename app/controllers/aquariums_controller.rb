@@ -31,6 +31,7 @@ class AquariumsController < ApplicationController
     if @aquarium && !params[:id].blank?
       @aquarium.add(params[:id], params[:count].to_i)
       text = @aquarium.status
+      text.merge!(feedback_sentence('added to'))
     else
       text = {'error' => 'true'}
     end
@@ -42,13 +43,26 @@ class AquariumsController < ApplicationController
   def remove
     @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
+      sp = Spcecies.find_by_id(params[:id].to_i)
       @aquarium.remove(params[:id], params[:count])
       text = @aquarium.status
+      text.merge!(feedback_sentence('removed from'))
     else
       text = {'error' => 'true'}
     end
     respond_to do |format|
       format.json { render :text => text.to_json }
     end
+  end
+  
+  private
+  
+  def feedback_sentence(action)
+    sp = Species.find_by_id(params[:id])
+    if sp
+      amount = params[:amount].to_i > 0 ? params[:amount].to_i : 1
+      return {'message' => "#{amount} #{amount > 1 ? sp.common_name.pluralize : sp.common_name} successfully #{action} your tank"}
+    end
+    {}
   end
 end

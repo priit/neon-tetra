@@ -86,11 +86,11 @@ class Aquarium < ActiveRecord::Base
     #when 65...85
     #  add_summary(:volume, 'growded')
     #else
-    if used > 79
+    if used < 80
       add_summary(:volume, 'ok')
     else
       add_summary(:volume, 'nok')
-      add_environment_error(:volume, "There is no room in your tank")
+      add_environment_error(:volume, "Fish you selected require bigger tank")
     end
     used
   end
