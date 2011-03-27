@@ -70,7 +70,11 @@ function addFish() {
     id:    $('#dialog .id').html(),
     count: $('input[name=fish_counter]').val()
   }, function(data) { 
+    $('#tank_properties .temperature .value').html(data.ranges.temperature);
+    $('#tank_properties .pH_dH .value').html('pH: '+data.ranges.ph+' | dH '+data.ranges.dh);
+
     
+    console.log(data);
     
   });
 }

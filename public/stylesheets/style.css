@@ -181,6 +181,10 @@ h1 {
   padding: 0px 10px;
 }
 
+#step3 #tank_properties li .value{
+  font-weight: bold;
+}
+
 #step3 #tank_properties .text {
   font-size: 11px;
   margin: 10px;
