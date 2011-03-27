@@ -66,15 +66,15 @@ function doFamilySearch(id) {
 }
 
 function addFish() {
+  fish_id = $('#dialog .id').html();
   $.getJSON('/aquariums/add', {
-    id:    $('#dialog .id').html(),
+    id:    fish_id,
     count: $('input[name=fish_counter]').val()
   }, function(data) { 
     $('#tank_properties .temperature .value').html(data.ranges.temperature);
     $('#tank_properties .pH_dH .value').html('pH: '+data.ranges.ph+' | dH '+data.ranges.dh);
-
     
-    console.log(data);
+    $('#fish_'+fish_id).clone().appendTo('#selected_fishes');
     
   });
 }

@@ -1,5 +1,6 @@
           <h1>Great job tanking your fish!</h1>
           <ul id="selected_fishes">
+          <!--
             <% @species.each do |s| %>
               <li id="fish_<%= s.id.to_s%>">
                 <%= image_tag(s.photo.url('thumb'), :class => 'vtip', :title => s.common_name,  :width => '150px', :height => '113px', :onClick => 'moreInfo("#fish_'+ s.id.to_s+'")') %>
@@ -11,6 +12,7 @@
                 </div>
               </li>
             <% end %>
+          -->
           
           </ul>
           <div id="tank_properties">
