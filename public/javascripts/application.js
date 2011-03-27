@@ -14,7 +14,7 @@ function moreInfo(fish) {
   $('#dialog .image').html(image);
   
   $("#dialog").dialog({
-			height: 415,
+			height: 365,
 			width: 726
   });
 }
