@@ -70,7 +70,7 @@ function doFamilySearch(id) {
 function addFish() {
   $.getJSON('/aquariums/add', {
     id: 1,
-    count: 10
+    count: $('input[name=fish_counter]').val()
   }, function(data) { 
     
   });
