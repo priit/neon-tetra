@@ -63,6 +63,6 @@ class AquariumsController < ApplicationController
       amount = params[:amount].to_i > 0 ? params[:amount].to_i : 1
       return {'message' => "#{amount} #{amount > 1 ? sp.common_name.pluralize : sp.common_name} successfully #{action} your tank"}
     end
-    {}
+    {'message' => ''}
   end
 end
