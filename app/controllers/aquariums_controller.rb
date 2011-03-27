@@ -1,4 +1,12 @@
 class AquariumsController < ApplicationController
+  def show
+    @aquarium = Aquarium.find(params[:id], :include => :species)
+
+    respond_to do |format|
+      format.json { render :json => @aquarium.to_json(:methods => [:species, :status]) }
+    end
+  end
+
   def create
     @aquarium = Aquarium.new(params[:aquarium])
 
@@ -16,7 +24,8 @@ class AquariumsController < ApplicationController
       format.json { render :json => @aquarium.status }
     end
   end
-  
+
+  # TODO move this logic into separate controller
   def add
     @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
