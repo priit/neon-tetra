@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  # temp turn it off
+  #protect_from_forgery
 end
