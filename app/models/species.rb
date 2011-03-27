@@ -34,7 +34,4 @@ class Species < ActiveRecord::Base
   def photo_huge
     photo.url(:huge) if photo?
   end
-
-
-
 end
