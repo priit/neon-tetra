@@ -15,7 +15,7 @@ class Species < ActiveRecord::Base
   }
   
   def volume
-    #e.g 3 cm => 30l
-    size.floor * 10
+    #1cm = 2L
+    size.floor * 2
   end
 end
