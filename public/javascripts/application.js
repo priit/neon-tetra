@@ -48,19 +48,23 @@ function doSearch(string) {
   $.get('/species', {
     search: string
   }, function(data) { 
-      $.each(data, function(key, val) {
-        console.log(val);
-        $('#search_result').append('<li id="fish_'+val.species.id+'"><img title="dsa" src="'+val.species.photo_thumb+'" onclick="moreInfo(\'#fish_'+val.species.id+'\')" class="vtip" alt="'+val.species.common_name+'"><div style="display:none"><div class="name">'+val.species.common_name+'</div><div class="description">'+val.species.description+'</div><div class="image"><img src="'+val.species.photo_medium+'" alt="'+val.species.common_name+'"></div><div class="min_group_size">'+val.species.min_group_size+'</div></div></li>');
-      });
-    }
-  );
+    populateFishList(data)
+  });
+}
+
+function populateFishList(data) {
+  $.each(data, function(key, val) {
+    $('#search_result').append('<li id="fish_'+val.species.id+'"><img title="dsa" src="'+val.species.photo_thumb+'" onclick="moreInfo(\'#fish_'+val.species.id+'\')" class="vtip" alt="'+val.species.common_name+'"><div style="display:none"><div class="name">'+val.species.common_name+'</div><div class="description">'+val.species.description+'</div><div class="image"><img src="'+val.species.photo_medium+'" alt="'+val.species.common_name+'"></div><div class="min_group_size">'+val.species.min_group_size+'</div></div></li>');
+  });
 }
 
 function doFamilySearch(id) {
+  $('#search_result').html('');
   $.get('/species', {
     'family_id' : id
   }, function(data) {
-  })
+    populateFishList(data);
+  });
 }
 
 $(document).ready(function() {
