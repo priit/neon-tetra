@@ -1,6 +1,7 @@
 class AquariumsController < ApplicationController
   def create
     @aquarium = Aquarium.new(params[:aquarium])
+    @aquarium.volume = 90 if @aquarium.volume.to_i < 1 
 
     respond_to do |format|
       if @aquarium.save

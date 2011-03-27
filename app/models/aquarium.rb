@@ -119,7 +119,7 @@ class Aquarium < ActiveRecord::Base
       'ranges' => {
         'temperature' => temperature_range.to_s,
         'ph' => ph_range.to_s,
-        'dt' => dh_range.to_s
+        'dh' => dh_range.to_s
       },
       'volume' => {
         'total' => volume,
