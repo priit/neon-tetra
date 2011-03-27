@@ -2,7 +2,9 @@
 // This file is automatically included by javascript_include_tag :defaul
 
 function moreInfo(fish) {
+
   name           = $(fish + " .name").html();
+    console.log(name);
   description    = $(fish + " .description").html();
   image          = $(fish + " .image").html();
   min_group_size = $(fish + " .min_group_size").html();
@@ -42,17 +44,27 @@ function createAquarium() {
 }
 
 function doSearch(string) {
+  $('#search_result').html('');
   $.get('/species', {
     search: string
-  }, function(data) {
+  }, function(data) { 
+    populateFishList(data)
+  });
+}
+
+function populateFishList(data) {
+  $.each(data, function(key, val) {
+    $('#search_result').append('<li id="fish_'+val.species.id+'"><img title="dsa" src="'+val.species.photo_thumb+'" onclick="moreInfo(\'#fish_'+val.species.id+'\')" class="vtip" alt="'+val.species.common_name+'"><div style="display:none"><div class="name">'+val.species.common_name+'</div><div class="description">'+val.species.description+'</div><div class="image"><img src="'+val.species.photo_medium+'" alt="'+val.species.common_name+'"></div><div class="min_group_size">'+val.species.min_group_size+'</div></div></li>');
   });
 }
 
 function doFamilySearch(id) {
+  $('#search_result').html('');
   $.get('/species', {
     'family_id' : id
   }, function(data) {
-  })
+    populateFishList(data);
+  });
 }
 
 $(document).ready(function() {
@@ -62,3 +74,5 @@ $(document).ready(function() {
     }
   });
 });
+
+

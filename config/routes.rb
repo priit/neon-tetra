@@ -1,5 +1,9 @@
 Fish::Application.routes.draw do
   devise_for :users
+  
+  match 'aquariums/add' => 'aquariums#add'
+  match 'aquariums/remove' => 'aquariums#remove'
+  
   resources :aquariums
   resources :configurations
   resources :species
