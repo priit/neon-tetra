@@ -133,7 +133,17 @@ h1 {
   height: 27px;
   line-height: 27px;
   border-bottom: 1px solid #999999;
+}
+
+#step2 #category_list ul li a{
   font-weight: bold;
+  color: #666666;
+  display: block;
+  text-decoration: none;
+}
+
+#step2 #category_list ul li a:hover{
+  color: #454545;
 }
 
 #step2 #search_result, #step3 #selected_fishes {
@@ -228,7 +238,7 @@ h1 {
   font-weight: bold;
   float: left;
   width: 706px;
-  padding: 10px;
+  padding: 6px 10px;
   line-height: 33px;
 }
 
