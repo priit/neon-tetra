@@ -1,14 +1,14 @@
 class AquariumsController < ApplicationController
   def show
-    @aquarium = Aquarium.find(params[:id], :include => :species)
-
+    @aquarium = Aquarium.find_by_id(session[:aquarium_id], :include => :species)
     respond_to do |format|
-      format.json { render :json => @aquarium.to_json(:methods => [:species, :status]) }
+      format.json { render :json => @aquarium ? @aquarium.to_json(:methods => [:species, :status]) : {'error' => 'true'} }
     end
   end
 
   def create
     @aquarium = Aquarium.new(params[:aquarium])
+    @aquarium.volume = 90 if @aquarium.volume.to_i < 1 
 
     respond_to do |format|
       if @aquarium.save
