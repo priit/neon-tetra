@@ -24,6 +24,7 @@ RailsAdmin.config do |config|
     field :min_dh
     field :max_dh
     field :tag_list
+    field :food_add
     field :photo
   end
 end
