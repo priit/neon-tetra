@@ -34,7 +34,7 @@
             <div class="top"></div>
               <ul>
                 <% @families.each do |f| -%>
-                  <li><%= f.common_name -%></li>
+                  <li><%= link_to f.common_name, '#', :onclick => "doFamilySearch(" + f.id.to_s + ");" -%></li>
                 <% end %>
               </ul>
             <div class="bottom"></div>
