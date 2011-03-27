@@ -4,10 +4,10 @@ class SpeciesController < ApplicationController
       src = "%#{params[:search]}%"
       @species = Species.where((:common_name =~ src) | 
                                (:latin_name =~ src) | 
-                               (:description =~ src))
+                               (:description =~ src)).limit(9)
 
     elsif params[:family_id]
-      @species = Species.where(:family_id => params[:family_id])
+      @species = Species.where(:family_id => params[:family_id]).limit(9)
     end
 
     respond_to do |format|
