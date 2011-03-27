@@ -225,6 +225,7 @@ h1 {
 .ui-dialog-titlebar-close {
   top: 10px !important;
   right: 10px !important;
+  z-index: 100
 }
 .ui-widget-header .ui-icon {
   background: url(../images/close.png) top right !important;
