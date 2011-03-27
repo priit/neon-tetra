@@ -17,7 +17,7 @@
       <div class="wizard">
         <div id="step1">
           <div class="video">
-            <iframe src="http://player.vimeo.com/video/21526067" width="620" height="349" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/14109777" width="640" height="360" frameborder="0"></iframe>
           </div>
           <div class="text">
             <div>Set your tank size in </div><input name="volume" type="text" value="liters" onfocus="if($(this).val()=='liters') {$(this).val('');}" onblur=" if($(this).val().length==0) { $(this).val('liters'); }"> <div>and</div><a href="#" class="orangeButton" onclick="createAquarium()">GET STARTED &raquo;</a>
@@ -119,7 +119,7 @@
           <div class="image"><%= image_tag('nemo.jpg') %></div>
           <div class="options">
             <input type="text" name="fish_counter" value="2">
-            <div class="add_fish_btn">Add to tank</div>
+            <div class="add_fish_btn" onclick="addFish()">Add to tank</div>
           </div>
         </div>
         <div class="right_panel">

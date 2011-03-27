@@ -20,9 +20,9 @@ class AquariumsController < ApplicationController
   def add
     @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
-      @aquarium.add(params[:id], params[:count])
+      @aquarium.add(params[:id], params[:count].to_i)
       respond_to do |format|
-        format.json { render :json => @aquarium.status }
+        format.json { render :text => @aquarium.status.to_json }
       end
     end
   end

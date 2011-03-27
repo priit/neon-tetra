@@ -67,7 +67,7 @@ class Aquarium < ActiveRecord::Base
   end
   
   def effective_volume
-    volume * 0.7
+    (volume || 90) * 0.7
   end
   
   def used_volume_as_percent
