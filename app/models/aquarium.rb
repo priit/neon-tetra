@@ -47,15 +47,21 @@ class Aquarium < ActiveRecord::Base
   end
   
   def ph_range
-    (species.collect {|s| s.min_ph}.compact.max .. species.collect {|s| s.max_ph}.compact.min)
+    min = species.collect {|s| s.min_ph}.compact.max
+    max = species.collect {|s| s.max_ph}.compact.min
+    min && max ? (min..max) : 'n/a'
   end
   
   def dh_range
-    (species.collect {|s| s.min_dh}.compact.max .. species.collect {|s| s.max_dh}.compact.min)
+    min = species.collect {|s| s.min_dh}.compact.max
+    max = species.collect {|s| s.max_dh}.compact.min
+    min && max ? (min..max) : 'n/a'
   end
   
   def temperature_range
-    (species.collect {|s| s.min_temperature}.compact.max .. species.collect {|s| s.max_temperature}.compact.min)
+    min = species.collect {|s| s.min_temperature}.compact.max
+    max = species.collect {|s| s.max_temperature}.compact.min
+    min && max ? (min..max) : 'n/a'
   end
   
   def specimen_count
@@ -124,7 +130,7 @@ class Aquarium < ActiveRecord::Base
       'volume' => {
         'total' => volume,
         'available' => effective_volume.round,
-        'needed' => volume_needed,
+        'needed' => volume_needed.round.to_i,
         'used' => used_volume_as_percent
       },
       'summary' => summary,
