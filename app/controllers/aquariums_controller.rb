@@ -11,14 +11,14 @@ class AquariumsController < ApplicationController
   end
   
   def status
-    @aquarium = Aquarium.find(session[:aquarium_id])
+    @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     respond_to do |format|
       format.json { render :json => @aquarium.status }
     end
   end
   
   def add
-    @aquarium = Aquarium.find(session[:aquarium_id])
+    @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
       @aquarium.add(params[:id], params[:count])
       respond_to do |format|
@@ -28,7 +28,7 @@ class AquariumsController < ApplicationController
   end
   
   def remove
-    @aquarium = Aquarium.find(session[:aquarium_id])
+    @aquarium = Aquarium.find_by_id(session[:aquarium_id])
     if @aquarium && !params[:id].blank?
       @aquarium.remove(params[:id], params[:count])
       respond_to do |format|
