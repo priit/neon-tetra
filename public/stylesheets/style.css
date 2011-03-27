@@ -293,13 +293,14 @@ ui-dialog-titlebar-close ui-corner-all {
   line-height: 28px;
   padding: 0px 10px;
   font-size: 12px;
-  margin-right: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
 #dialog input[name=fish_counter] {
   height: 28px;
   padding: 0px;
+  float: left;
   margin: 0px;
   border: none;
   background-color: #707070;

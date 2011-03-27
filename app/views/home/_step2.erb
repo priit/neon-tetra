@@ -17,6 +17,7 @@
               <li id="fish_<%= s.id.to_s%>">
                 <%= image_tag(s.photo.url('thumb'), :class => 'vtip', :title => s.common_name, :width => '150px', :height => '113px', :onClick => 'moreInfo("#fish_'+ s.id.to_s+'")') %>
                 <div style="display:none">
+                  <div class="id"><%= s.id %></div>
                   <div class="name"><%= s.common_name %></div>
                   <div class="description"><%= simple_format(s.description) %></div>
                   <div class="image"><%= image_tag(s.photo.url('medium', :width => "400px")) %></div>

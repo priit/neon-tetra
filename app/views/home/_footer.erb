@@ -1,0 +1,10 @@
+        <div id="account">
+          <% if current_user %>
+            <%= truncate(current_user.name) %>
+            <%= link_to 'Sign out', destroy_user_session_path %>
+          <% else %>
+            <%= link_to_rpx 'Sign up', user_session_url %>
+            <%= link_to_rpx 'Sign in', user_session_url %>
+          <% end %>
+          <%= javascript_include_rpx(user_session_url) %>
+        </div>
