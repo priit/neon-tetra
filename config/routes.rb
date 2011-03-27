@@ -3,6 +3,7 @@ Fish::Application.routes.draw do
   resources :aquariums
   resources :configurations
   resources :species
+  resources :families
 
   root :to => 'home#index'
 

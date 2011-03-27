@@ -55,6 +55,10 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_where (1.0.4)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 2.0.7)
     mime-types (1.16)
     mysql2 (0.2.6)
     paperclip (2.3.8)
@@ -96,6 +100,7 @@ DEPENDENCIES
   acts-as-taggable-on
   devise (= 1.1.7)
   devise_rpx_connectable (= 0.2.2)
+  meta_where
   mysql2
   paperclip
   rails (= 3.0.5)

@@ -18,4 +18,23 @@ class Species < ActiveRecord::Base
     #1cm = 2L
     size.floor * 2
   end
+
+  def photo_thumb
+    photo.url(:thumb) if photo?
+  end
+
+  def photo_small
+    photo.url(:small) if photo?
+  end
+
+  def photo_medium
+    photo.url(:medium) if photo?
+  end
+
+  def photo_huge
+    photo.url(:huge) if photo?
+  end
+
+
+
 end
