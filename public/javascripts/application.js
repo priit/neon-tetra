@@ -48,6 +48,13 @@ function doSearch(string) {
   });
 }
 
+function doFamilySearch(id) {
+  $.get('/species', {
+    'family_id' : id
+  }, function(data) {
+  })
+}
+
 $(document).ready(function() {
   $('#search').keyup(function(e) {
     if (e.keyCode == 13) {
